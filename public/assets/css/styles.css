@@ -1,0 +1,32 @@
+:root {
+  --primaryColor: #DAD8F7;
+  --secondaryColor: #C2BFF4;
+  --boxBackground: #6D67D0;
+  --mainBackgound: #8E87FA;
+  --white: #FFFFFF;
+  --black: #000000;  
+
+  --fontLato: 'Lato';
+}
+
+* {
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  background-color: var(--mainBackgound);
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

@@ -181,7 +181,7 @@ function BrowserGeolocation() {
 (async () => {
   const apiKey = 's8pCuNPJ9hC6iGeMmZZg6BzinBytIYyF'
   const lang = 'pt-br'
-  const baseUrl = `http://dataservice.accuweather.com/`
+  const baseUrl = `https://dataservice.accuweather.com/`
   try {
     const location = await BrowserGeolocation()
     const localizationUrl = `${baseUrl}locations/v1/cities/search?apikey=${apiKey}&q=${location.lat}%2C${location.lon}&language=${lang}&details=false&offset=25`

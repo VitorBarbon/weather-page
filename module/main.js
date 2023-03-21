@@ -179,7 +179,7 @@ function BrowserGeolocation() {
 }
 
 (async () => {
-  const apiKey = 's8pCuNPJ9hC6iGeMmZZg6BzinBytIYyF'
+  const apiKey = 'KPGnw8zvRaqcTBBMi06aGeHkzd5XG2Vn'
   const lang = 'pt-br'
   const baseUrl = `https://dataservice.accuweather.com/`
   try {

@@ -14,7 +14,9 @@ function handleClearData(data) {
   const clearData = DailyForecasts.map(weather => {
     const date = new Date(weather.Date)
     const weekday = date.toLocaleDateString('pt-BR', {weekday: 'long'})
+    const svg = handleIconWeather(weather.Day.Icon)
     return {
+      icon: svg,
       sun: { 
         set: weather.Sun.Set, 
         epochRise: weather.Sun.EpochRise,
@@ -109,7 +111,7 @@ function handleRenderData(dataWeek, dataCurrent, city) {
     weekWeather.insertAdjacentHTML('beforebegin',`
       <div class="week-card">
       <h5>${weather.day}</h5>
-      <img src="./assets/images/animated/snowy-1.svg" alt="">
+      <img src="./assets/images/animated/${weather.icon}.svg" alt="">
       <div class="min-max">
       <span class="max-temperature">${weather.temperature.max.toFixed(0)}&ordm</span>
       <span class="min-temperature">${weather.temperature.min.toFixed(0)}&ordm</span>
@@ -182,6 +184,8 @@ function BrowserGeolocation() {
   const apiKey = 'KPGnw8zvRaqcTBBMi06aGeHkzd5XG2Vn'
   const lang = 'pt-br'
   const baseUrl = `https://dataservice.accuweather.com/`
+  const ip = window.location;
+  console.log(ip)
   try {
     const location = await BrowserGeolocation()
     const localizationUrl = `${baseUrl}locations/v1/cities/search?apikey=${apiKey}&q=${location.lat}%2C${location.lon}&language=${lang}&details=false&offset=25`
